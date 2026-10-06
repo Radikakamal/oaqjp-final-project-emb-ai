@@ -9,6 +9,16 @@ HEADERS = {
 
 
 def emotion_detector(text_to_analyze):
+    if text_to_analyze is None or text_to_analyze.strip() == "":
+        return {
+            'anger': None,
+            'disgust': None,
+            'fear': None,
+            'joy': None,
+            'sadness': None,
+            'dominant_emotion': None
+        }
+
     payload = {
         'raw_document': {
             'text': text_to_analyze
